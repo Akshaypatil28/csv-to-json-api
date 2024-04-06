@@ -47,7 +47,7 @@ function getLinesAndHeaders(filePath: string) {
   return [lines, headers];
 }
 
-function generateJSONObject(headers: any, data: any) {
+function generateJSONObject(headers: Array<string>, data: Array<string>) {
   const missingMandatoryFields = [];
   const mandatoryFields = ["name.firstName", "name.lastName", "age"];
   const finalJSONObject: any = {};

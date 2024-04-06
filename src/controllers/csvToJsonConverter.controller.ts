@@ -8,7 +8,7 @@ async function processDataAndInsert(req: any, res:any) {
   }
   try {
     await csvParser.processData(req.file.path);
-    const distributionData = await calculator.calculateAgeDistribution();    
+    const distributionData = await calculator.calculateAgeDistribution();  
     printer.printAgeDistribution(distributionData);
     res.end("Data added successfully");
   } catch (error) {

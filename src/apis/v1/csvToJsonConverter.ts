@@ -1,10 +1,11 @@
-// const localRouter = require("express").Router();
+import { Router } from "express";
+
 const multer = require("multer");
 const processDataController = require("../../controllers/csvToJsonConverter.controller");
 
 const upload = multer({ dest: "uploads/" });
 
-function csvToJsonAPI(router: any) {
+function csvToJsonAPI(router: Router) {
   router.post("/upload", upload.single("csvFile"), processDataController);
 }
 
