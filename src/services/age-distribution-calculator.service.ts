@@ -1,15 +1,8 @@
-const dbCObject = require("./db.service");
-const dbConnection = dbCObject.dbConnect;
+const dbConnectionObject = require("./db.service");
+
 
 async function calculateAgeDistribution() {
-  let dbClient;
-  try {
-    dbClient = dbConnection();
-    await dbClient.connect();
-  } catch (error) {
-    throw new Error("Error connecting to the database.");
-  }
-
+  const dbClient = await dbConnectionObject.dbConnect();
   const query = `
     SELECT
         CASE

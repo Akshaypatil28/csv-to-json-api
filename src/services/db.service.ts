@@ -9,9 +9,13 @@ const confDetails = {
 };
 
 
-function dbConnect() {
+async function dbConnect() {
   const client = new Client(confDetails);
-  
+  try {
+    await client.connect();
+  } catch (error) {
+    throw new Error("Error connecting to the database.");
+  }
   return client;  
 }
 
