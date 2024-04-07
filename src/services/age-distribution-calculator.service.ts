@@ -11,7 +11,7 @@ async function calculateAgeDistribution() {
   }
 
   const query = `
-  SELECT
+    SELECT
         CASE
           WHEN age < 20 THEN '<20'
           WHEN age BETWEEN 20 AND 40 THEN '20-40'
